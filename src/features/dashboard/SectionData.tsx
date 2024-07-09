@@ -50,6 +50,9 @@ export default function SectionData({ initialData }: { initialData?: any }) {
 				}}
 				defaultCurrent={+getCurrentPage() || 1}
 				total={count || 0}
+				// pageSizeOptions={[
+				// 	2
+				// ]}
 			/>
 		);
 	};
@@ -113,7 +116,7 @@ export default function SectionData({ initialData }: { initialData?: any }) {
 				</Col>
 			</Row>
 			<Row align="middle" justify="end">
-				<Col>{renderPagination(data?.count)}</Col>
+				<Col>{renderPagination(data?.total)}</Col>
 			</Row>
 		</>
   );

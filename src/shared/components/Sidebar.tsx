@@ -18,7 +18,7 @@ const items: MenuProps['items'] = [
   {
     key: 1,
     icon: <HomeOutlined />,
-    label: <Link to={'/'}>Dashboard</Link>,
+    label: <Link to={'/dashboard'}>Dashboard</Link>,
   },
   {
     key: 2,

@@ -31,13 +31,15 @@ const useGetList = (initialData?: any) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
 
+  const limit = 10;
+
 	const page = Object.fromEntries(searchParams).page || 1;
-	const offset = (+page - 1) * 10;
+	const offset = (+page - 1) * limit;
 
 	const params = {
 		...Object.fromEntries(searchParams),
 		offset,
-		limit: 10,
+		per_page: limit,
 	};
 
 	/**
@@ -63,7 +65,7 @@ const useGetList = (initialData?: any) => {
 	const dataTable = modelUsers(
 		fetchQuery?.data?.data,
 		+getCurrentPage(),
-		10,
+		limit,
 	);
 
 	const generateLinkPagination = (type: string): string => {
